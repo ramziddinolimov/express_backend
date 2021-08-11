@@ -4,10 +4,10 @@ const express = require("express");
 const app = express()
 
 
-app.listen(8080, () => {
-    console.log("App running at 8080");
+app.listen(8088, () => {
+    console.log("App running at 8088");
 })
 
-process.on("exit",  (event) => {
-    console.log(event);
-})
+app.get("/", (req, res) => {
+    res.send("Test");
+});
