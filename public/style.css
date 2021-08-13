@@ -78,3 +78,14 @@ body{
     right: 20px;
 }
 
+.container .navbar .navitem .lang select{
+    padding: 10px 40px;
+    margin-left: 40px;
+    border: none;
+    outline: none;
+    border-radius: 30px;
+    background-color: white;
+    position: relative;
+    right: 4em;
+}
+
