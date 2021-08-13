@@ -125,7 +125,7 @@ body{
 
 }
 
-.sidebar a{
+.sidebar button{
     position: relative;
     display: inline-block;
     padding: 30px 60px;
@@ -134,5 +134,37 @@ body{
     text-transform: uppercase;
     font-weight: 600;
     letter-spacing: 2px;
+    -webkit-box-reflect: below 50px linear-gradient (transparent, #0002);
+    transition: .5s;
+    outline: none;
+    cursor: pointer;
+    font-size: 17px;
+    color: white;
+    background: none;
+}
+
+.sidebar button:hover{
+    color: black;
+}
+
+.sidebar button:nth-child(2){
+    filter: hue-rotate(80deg);
+}
+
+.sidebar button::before{
+    content: "";
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 2px;
+    background: #0f0;
+    box-shadow: 5px -8px 0 #0f0,
+                5px 8px 0 #0f0;
+}
+
+.sidebar button:hover::before{
+    width: 60%;
 }
 
