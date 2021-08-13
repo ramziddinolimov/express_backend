@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     user-select: none;
+    font-family: sans-serif;
 }
 
 ul{
@@ -26,7 +27,54 @@ body{
 }
 
 .container{
-    width: 90%;
+    width: 80%;
     height: 85vh;
     background: rgba(255, 255, 255, .4);
 }
+
+.container .navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 40px;
+    margin-top: 1em;
+}
+
+.container .navbar .logo{
+    display: flex;
+    align-items: center;
+}
+
+.container .navbar .logo img{
+    width: 60px;
+}
+
+.container .navbar .logo .logoname{
+    font-size: 25px;
+    text-transform: uppercase;
+    margin-left: 1em;
+}
+
+.container .navbar .searchbox{
+    position: relative;
+}
+
+.container .navbar .searchbox input{
+    padding: 12px 120px 12px 20px;
+    border: none;
+    outline: none;
+    border-radius: 30px;
+    font-size: 18px;
+    transition: .3s;
+}
+
+.container .navbar .searchbox input:focus{
+    padding: 12px 250px 12px 20px;
+}
+
+.container .navbar .searchbox .fa{
+    position: absolute;
+    top: 15px;
+    right: 20px;
+}
+
