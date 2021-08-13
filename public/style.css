@@ -66,6 +66,7 @@ body{
     border-radius: 30px;
     font-size: 18px;
     transition: .3s;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .2);
 }
 
 .container .navbar .searchbox input:focus{
@@ -87,5 +88,51 @@ body{
     background-color: white;
     position: relative;
     right: 4em;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .2);
+}
+
+.btn{
+    padding: 10px 30px;
+    background: rgba(255, 255, 255, .4);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .2);
+    border-radius: 30px;
+    letter-spacing: 1px;
+    transition: .5s;
+}
+
+.btn:hover{
+    background: rgba(0, 255, 0, .5);
+    color: #fff;
+    
+}
+
+
+.container .sidebar{
+    margin: 20px 0 20px 20px;
+    background: rgba(255, 255, 255, .2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .3);
+    width: 350px;
+    height: 600px;
+    border-radius: 30px;
+    padding: 10px;
+}
+
+.sidebar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: wrap column;
+
+}
+
+.sidebar a{
+    position: relative;
+    display: inline-block;
+    padding: 30px 60px;
+    border: 2px solid #0f0;
+    margin: 40px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2px;
 }
 
