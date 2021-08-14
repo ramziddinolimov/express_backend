@@ -16,7 +16,9 @@ buttonElement1.addEventListener('click', () => {
     
      inputElement.textContent = ""
      selectElement.textContent = ""
-     console.log(buttonElement1);
+     
+
+     
 
 })
 
