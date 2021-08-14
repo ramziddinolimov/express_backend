@@ -47,6 +47,13 @@ body{
 
 .container .navbar .logo img{
     width: 60px;
+    animation: rotate 5s linear infinite;
+}
+
+@keyframes rotate{
+    from{
+        transform: rotate(-360deg);
+    }
 }
 
 .container .navbar .logo .logoname{
