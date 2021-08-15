@@ -5,18 +5,45 @@ const buttonElement3 = document.querySelector("#buttonSources")
 
 const inputElement = document.querySelector(".searchbox")
 const selectElement = document.querySelector(".navitem")
+const navElement = document.querySelector(".navbar")
 
 
+function create1() {
+     let divElement = document.createElement('div')
+     let formElement = document.createElement('form')
+     let inputElement = document.createElement('input')
+     let iElement = document.createElement('i')
+
+     
+     formElement.appendChild(inputElement)
+     formElement.appendChild(iElement)
+
+     divElement.appendChild(formElement)
+     // navElement.appendChild(divElement)
+
+     divElement.classList.add("searchbox")
+     iElement.classList.add("fa fa-search")
+
+     inputElement.placeholder = "search"
+     inputElement.type = "text"
+     iElement.ariaHidden = "true"
+
+     return divElement
+
+     
+     
+}
 
 
-
-
+create1()
 
 buttonElement1.addEventListener('click', () => {
     
      inputElement.textContent = ""
      selectElement.textContent = ""
      
+     navElement.appendChild(create1())
+     // create1()
 
      
 

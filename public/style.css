@@ -129,6 +129,7 @@ body{
     align-items: center;
     justify-content: center;
     flex-flow: wrap column;
+    width: 35%;
 
 }
 
@@ -225,3 +226,43 @@ body{
     transition-delay: 0s, .5s, 1s, 1s;            
 
 }
+
+
+.body_main{
+    display: flex;
+    
+
+    
+}
+
+.main{
+    width: 65%;
+    margin-left: 100px;
+    margin-top: 50px;
+}
+
+.main tr, th, td{
+    border: 1px solid black;
+    
+}
+.main th{
+    font-size: 25px;
+    padding: 10px 20px;
+}
+
+.main td{
+    font-size: 20px;
+    padding: 7px 15px;
+}
+
+.main table{
+    
+    border-collapse: collapse;
+    width: 90%;
+}
+
+.main td button{
+    padding: 8px 20px;
+}
+
+
