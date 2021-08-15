@@ -20,6 +20,7 @@ app.listen(3035, () => {
 })
 
 app.get('/form', async (req, res) =>{
+    
     let data = await db.readFile();
     res.json({
         data: data,
