@@ -6,6 +6,7 @@ const buttonElement3 = document.querySelector("#buttonSources")
 const inputElement = document.querySelector(".searchbox")
 const selectElement = document.querySelector(".navitem")
 const navElement = document.querySelector(".navbar")
+const btnElement = document.querySelector(".btn")
 
 
 function create1() {
@@ -36,6 +37,12 @@ function create1() {
 
 
 create1()
+
+
+
+btnElement.addEventListener('click', () => {
+     
+})
 
 buttonElement1.addEventListener('click', () => {
     

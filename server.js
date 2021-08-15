@@ -1,9 +1,10 @@
 const express = require("express");
-const fs = require("fs").promises
+const fs = require("fs").promises;
+const database = require("./modeles/database.js");
 
 
-const app = express()
-
+const app = express();
+const db = new database();
 
 
 
@@ -14,6 +15,14 @@ app.get("/", async (req, res) => {
         res.send(response);
 });
 
-app.listen(3033, () => {
-    console.log("App running at 3033");
+app.listen(3035, () => {
+    console.log("App running at 3035");
 })
+
+app.get('/form', async (req, res) =>{
+    let data = await db.readFile();
+    res.json({
+        data: data,
+    });
+});
+
