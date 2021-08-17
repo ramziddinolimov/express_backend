@@ -27,3 +27,9 @@ app.get('/form', async (req, res) =>{
     });
 });
 
+ app.post("/uform", async (req, res)=>{
+   
+    let dbbody = await db.adduData(req.body.name, req.body.age, req.body.kurs, req.body.manba)
+    res.json(dbbody)
+ 
+})

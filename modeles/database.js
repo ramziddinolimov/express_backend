@@ -16,11 +16,13 @@ module.exports = class Database {
         return data.data;
     }
 
-    async addData(name) {
+    async addData(name, age, kurs, manba) {
         const data = {
             id: Math.random().toString(32).substring(2),
             name,
-            isDone: false,
+            age,
+            kurs,
+            manba,
         }
         this.data.push(data);
         await fs.writeFile(

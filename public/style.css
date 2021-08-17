@@ -67,7 +67,8 @@ body{
 }
 
 .container .navbar .searchbox input{
-    padding: 12px 120px 12px 20px;
+    padding: 12px 12px 12px 20px;
+    margin-left: 20px;
     border: none;
     outline: none;
     border-radius: 30px;
@@ -76,14 +77,13 @@ body{
     box-shadow: 0 10px 30px rgba(0, 0, 0, .2);
 }
 
-.container .navbar .searchbox input:focus{
-    padding: 12px 250px 12px 20px;
-}
 
-.container .navbar .searchbox .fa{
-    position: absolute;
-    top: 15px;
-    right: 20px;
+
+
+
+form{
+    display: flex;
+    
 }
 
 .container .navbar .navitem .lang select{
@@ -265,6 +265,17 @@ body{
 
 .main td button{
     padding: 8px 20px;
+    background-color: red;
+    border: none;
+    outline: none;
+    border-radius: 5px;
 }
+
+
+
+
+
+
+
 
 
