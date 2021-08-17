@@ -6,7 +6,10 @@ const database = require("./modeles/database.js");
 const app = express();
 const db = new database();
 
-
+app.use(express.urlencoded({
+    extended: true,
+}))
+app.use(express.json())
 
 app.use(express.static(__dirname + "/public"));
 
@@ -15,8 +18,8 @@ app.get("/", async (req, res) => {
         res.send(response);
 });
 
-app.listen(3035, () => {
-    console.log("App running at 3035");
+app.listen(3060, () => {
+    console.log("App running at 3060");
 })
 
 app.get('/form', async (req, res) =>{
@@ -29,7 +32,7 @@ app.get('/form', async (req, res) =>{
 
  app.post("/uform", async (req, res)=>{
    
-    let dbbody = await db.adduData(req.body.name, req.body.age, req.body.kurs, req.body.manba)
+    let dbbody = await db.addData(req.body.name, req.body.age, req.body.kurs, req.body.manba)
     res.json(dbbody)
  
 })

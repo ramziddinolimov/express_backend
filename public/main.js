@@ -2,74 +2,86 @@
 const buttonElement1 = document.querySelector("#buttonStudents")
 const buttonElement2 = document.querySelector("#buttonCourses")
 const buttonElement3 = document.querySelector("#buttonSources")
+const formElement = document.querySelector("#formElement")
 
-const inputElement = document.querySelector(".searchbox")
+const nameinputElement = document.querySelector("#nameinputElement")
+const ageinputElement = document.querySelector("#ageinputElement")
 const selectElement = document.querySelector(".navitem")
 const navElement = document.querySelector(".navbar")
 const btnElement = document.querySelector(".btn")
+const tbodyElement = document.querySelector("#tbodyElement")
+const kursElement = document.querySelector("#kursElement")
+const manbaElement = document.querySelector("#manbaElement")
 
-
-function create1() {
-     let divElement = document.createElement('div')
-     let formElement = document.createElement('form')
-     let inputElement = document.createElement('input')
-     let iElement = document.createElement('i')
-
+window.addEventListener("DOMContentLoaded", async e=>{students ()})
+async function students(){
+     let respon = await fetch("/form",{
+         method: "GET",
+     });
+     respon = await respon.json()
+     create1(respon.data);
      
-     formElement.appendChild(inputElement)
-     formElement.appendChild(iElement)
+}
 
-     divElement.appendChild(formElement)
-     // navElement.appendChild(divElement)
 
-     divElement.classList.add("searchbox")
-     iElement.classList.add("fa fa-search")
+function create1(array) {
 
-     inputElement.placeholder = "search"
-     inputElement.type = "text"
-     iElement.ariaHidden = "true"
 
-     return divElement
+     tbodyElement.innerHTML = ""
+     for(let i of array){
+          let trElement = document.createElement('tr')
+          let tdElement = document.createElement('td')
+          let td2Element = document.createElement('td')
+          let td3Element = document.createElement('td')
+          let td4Element = document.createElement('td')
+          let td5Element = document.createElement('td')
+          let deleteButton = document.createElement('button')
+     
+          trElement.appendChild(tdElement)
+          trElement.appendChild(td2Element)
+          trElement.appendChild(td3Element)
+          trElement.appendChild(td4Element)
+          trElement.appendChild(td5Element)
+
+          tdElement.textContent = i.name
+          td2Element.textContent = i.age
+          td3Element.textContent = i.kursi
+          td4Element.textContent = i.manba
+          td5Element.appendChild(deleteButton)
+          deleteButton.textContent = "delete"
+          tbodyElement.appendChild(trElement)
+     }
+    
 
      
      
 }
 
 
-create1()
-
-
-
-btnElement.addEventListener('click', () => {
-     
-})
-
-buttonElement1.addEventListener('click', () => {
+formElement.addEventListener("submit", async event => {
+     event.preventDefault()
+    let response = await fetch("/uform",      {
+     headers: {"Content-Type": "application/json",},
+     method: "POST",
+ 
+     body: JSON.stringify({
+         name: nameinputElement.value,
+         age: ageinputElement.value,
+         kurs: kursElement.value,
+         manba: manbaElement.value,
+   
+     })
+    })
+    response = await response.json()
+    students()
+ 
+ 
     
-     inputElement.textContent = ""
-     selectElement.textContent = ""
-     
-     navElement.appendChild(create1())
-     // create1()
-
-     
-
-})
+ });
 
 
 
+//  formElement2.addEventListener('submit', async event => {
+//       event.preventDefault()
+//  })
 
-
-buttonElement2.addEventListener('click', () => {
-    
-
-})
-
-
-
-
-
-buttonElement3.addEventListener('click', () => {
-    
-
-})
